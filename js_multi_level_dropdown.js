@@ -10,7 +10,7 @@ district_div.style.display = "none";
 city_div.style.display = "none";
 
 async function getStates() {
-  var response = await fetch("http://localhost/api_data.php");
+  var response = await fetch("http://localhost/JavaScriptDependentDropwDown/api_data.php");
 
   var json_data = await response.json();
 
@@ -29,7 +29,7 @@ async function getStates() {
 async function getDistrict(state_id) {
   district_div.style.display = "none";
   var response = await fetch(
-    "http://localhost/api_data.php?type=district&state_id=" + state_id
+    "http://localhost/JavaScriptDependentDropwDown/api_data.php?type=district&state_id=" + state_id
   );
 
   var json_data = await response.json();
@@ -50,7 +50,7 @@ async function getDistrict(state_id) {
 async function getAddress(district_id) {
   city_div.style.display = "none";
   var response = await fetch(
-    "http://localhost/api_data.php?type=address&district_id=" + district_id
+    "http://localhost/JavaScriptDependentDropwDown/api_data.php?type=address&district_id=" + district_id
   );
 
   var json_data = await response.json();
@@ -69,6 +69,8 @@ async function getAddress(district_id) {
 }
 
 getStates();
+
+getDistrict(2);
 
 state_dropdown.onchange = function () {
   getDistrict(state_dropdown.value);

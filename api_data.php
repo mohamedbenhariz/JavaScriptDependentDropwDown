@@ -1,5 +1,5 @@
 <?php
-$con=mysqli_connect("localhost","api_user","api_user","js_ajax_example");
+$con=mysqli_connect("localhost","root","","test");
 $GLOBALS['con']=$con;
 function getStates($id=NULL){
 
